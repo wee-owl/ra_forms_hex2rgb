@@ -4,7 +4,7 @@ import '../App.css';
 function Converter() {
   const [state, setState] = React.useState('rgb(255, 255, 255)');
 
-  const parser = (code) => parseInt(code, 16);
+  const parser = (code) => code.match(/[a-f0-9]{2}/gi) ? parseInt(code, 16) : 'NaN';
 
   const handleChange = (e) => {
     e.preventDefault();
